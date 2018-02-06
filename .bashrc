@@ -33,7 +33,6 @@ alias sdn="sudo shutdown now"
 alias newnet="sudo systemctl restart NetworkManager" # Refresh wifi
 alias nf="clear && neofetch" # Le Redditfetch
 #Install an AUR package manually (for Parabola to get AUR access):
-aurinstall() { curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz && tar -xvf $1.tar.gz && cd $1 && makepkg --noconfirm -si && cd .. && rm -rf $1 $1.tar.gz ;}
 alias psref="gpg-connect-agent RELOADAGENT /bye" # Refresh gpg
 
 # Some aliases
@@ -50,11 +49,10 @@ alias gitpass="git config --global credential.helper cache"
 alias tr="transmission-remote"
 alias mkdir="mkdir -pv"
 alias rf="source ~/.bashrc"
-alias hishame="ssh root@46.101.118.69"
 alias ref="~/.config/Scripts/shortcuts.sh && source ~/.bashrc" # Refresh shortcuts manually and reload bashrc
 alias bars="bash ~/.config/polybar/launch.sh" # Run Polybar relaunch script
 alias bw="wal -i ~/.config/wall.png" # Rerun pywal
-weather() { curl wttr.in/berkane ;} # Check the weather (give city or leave blank).
+weather() { curl wttr.in/$1 ;} # Check the weather (give city or leave blank).
 
 # Adding color
 alias ls='ls -hN --color=auto --group-directories-first'
@@ -65,7 +63,6 @@ alias ccat="highlight --out-format=xterm256" #Color cat - print file with syntax
 alias lsc="screen.sh l" # Use laptop screen only
 alias vsc="screen.sh v" # Use VGA only
 alias dsc="screen.sh d" # Use both laptop and VGA screen
-# alias debase="sudo umount /home/Shared/Videos & screen.sh l && i3 restart" # Prep for taking my ThinkPad off Ultrabase
 
 # Internet
 alias yt="youtube-dl --add-metadata -ic" # Download video link
@@ -74,12 +71,6 @@ alias youtube="youtube-viewer"
 alias ethspeed="speedometer -r enp0s25"
 alias wifispeed="speedometer -r wlp3s0"
 alias starwars="telnet towel.blinkenlights.nl"
-
-# TeX
-alias Txa="cp ~/Documents/LaTeX/article.tex"
-alias Txs="cp ~/Documents/LaTeX/beamer.tex"
-alias Txh="cp ~/Documents/LaTeX/handout.tex"
-alias TC='texclear'
 
 # Audio and Music
 alias mute="pamixer -m"
